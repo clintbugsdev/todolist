@@ -1,0 +1,105 @@
+[
+    {
+        "name": "nezamy/route",
+        "version": "v1.1.0",
+        "version_normalized": "1.1.0.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/nezamy/route.git",
+            "reference": "d2612f463868f1e25620eb99ffd18309775a29b5"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/nezamy/route/zipball/d2612f463868f1e25620eb99ffd18309775a29b5",
+            "reference": "d2612f463868f1e25620eb99ffd18309775a29b5",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.4.0"
+        },
+        "time": "2017-08-05T01:13:32+00:00",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "System\\": "system"
+            },
+            "files": [
+                "system/function.php"
+            ]
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Mahmoud Elnezamy",
+                "email": "mahmoud@nezamy.com",
+                "homepage": "http://nezamy.com",
+                "role": "Full Stack Web Developer"
+            }
+        ],
+        "description": "Route - Fast, flexible routing for PHP, enabling you to quickly and easily build RESTful web applications.",
+        "homepage": "https://nezamy.com/route",
+        "keywords": [
+            "api",
+            "justframework",
+            "restful",
+            "route"
+        ]
+    },
+    {
+        "name": "twbs/bootstrap",
+        "version": "v4.0.0-beta.2",
+        "version_normalized": "4.0.0.0-beta2",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/twbs/bootstrap.git",
+            "reference": "fc94de5b8b5b329a298eeeb76174b146ff17af2d"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/twbs/bootstrap/zipball/fc94de5b8b5b329a298eeeb76174b146ff17af2d",
+            "reference": "fc94de5b8b5b329a298eeeb76174b146ff17af2d",
+            "shasum": ""
+        },
+        "replace": {
+            "twitter/bootstrap": "self.version"
+        },
+        "time": "2017-10-19T19:23:29+00:00",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "3.3.x-dev"
+            }
+        },
+        "installation-source": "dist",
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Jacob Thornton",
+                "email": "jacobthornton@gmail.com"
+            },
+            {
+                "name": "Mark Otto",
+                "email": "markdotto@gmail.com"
+            }
+        ],
+        "description": "The most popular front-end framework for developing responsive, mobile first projects on the web.",
+        "homepage": "https://getbootstrap.com",
+        "keywords": [
+            "JS",
+            "css",
+            "framework",
+            "front-end",
+            "mobile-first",
+            "responsive",
+            "sass",
+            "web"
+        ]
+    }
+]
