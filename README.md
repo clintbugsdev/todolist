@@ -43,3 +43,7 @@ $pwd = 'todolist_pwd';
 * [Route](http://nezamy.com/route) - Fast, flexible routing for PHP, enabling you to quickly and easily build RESTful web applications. 
 * [JQuery](https://jquery.com/)
 * [Bootstrap](https://getbootstrap.com/)
+
+## Author
+
+* **Clinton Bugtong** - *clintbugs.dev@gmail.com*
