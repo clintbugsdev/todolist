@@ -16,7 +16,7 @@ $route = $app->route;
 $route->get('/', function() {
     ob_start();
     include('view.php');
-    $var=ob_get_contents(); 
+    $var = ob_get_contents();
     ob_end_clean();
     echo $var;
 });
@@ -53,9 +53,9 @@ $route->post('/api/v1/todolist', function() {
     if (empty($input['item'])) {
         echo json_encode(['status' => 'Error', 'message' => 'Item is required']);
     } else {
-        $result = $todolist->insert(['item' => $input['item']]);
-        if ($result) {
-            echo json_encode(['status' => 'Success']);
+        $new_item_id = $todolist->insert(['item' => $input['item']]);
+        if ($new_item_id) {
+            echo json_encode(['status' => 'Success', 'data' => ['id' => $new_item_id]]);
         } else {
             echo json_encode(['status' => 'Error', 'message' => 'Something went wrong']);
         }
@@ -79,9 +79,9 @@ $route->patch('/api/v1/todolist/?', function($id) {
     }
 });
 /*
- * Update Item
+ * Delete Item
  */
-$route->delete('/todolist/?', function($id) {
+$route->delete('/api/v1/todolist/?', function($id) {
     $todolist = new TODOList();
     $result = $todolist->delete($id);
     if ($result) {

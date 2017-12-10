@@ -34,6 +34,20 @@
                 </thead>
                 <tbody>
                 </tbody>
+                <tfoot>
+                    <tr>
+                        <th>
+                        </th>
+                        <th id="th-item-input">
+                            <div class="form-group">
+                                <input id="new_item" name="new_item" type="text" class="input-group" placeholder="Add new item here">
+                            </div>
+                        </th>
+                        <th>
+                            <button id="btn-add-item" type="button" class="btn btn-sm btn-success">Add</button>
+                        </th>
+                    </tr>
+                </tfoot>
             </table>
 
         </main>

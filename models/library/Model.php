@@ -75,7 +75,7 @@ class Model extends Database {
             $stmt->bindValue(':' . $key, $value);
         }
         // execute statement
-        return $stmt->execute();
+        return $stmt->execute() ? $this->conn->lastInsertId() : false;
     }
 
     public function update($id, $values = array()) {
