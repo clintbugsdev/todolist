@@ -1,4 +1,11 @@
 <?php
+/*
+ * Database Connection Credentials
+ */
+define('HOST', 'localhsot');
+define('DB', 'todolist_db');
+define('DBUSER', 'todolist_user');
+define('DBPWD', 'todolist_pwd');
 
 define('DS', DIRECTORY_SEPARATOR, true);
 define('BASE_PATH', __DIR__ . DS, TRUE);
