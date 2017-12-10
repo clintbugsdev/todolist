@@ -4,7 +4,7 @@ define('DS', DIRECTORY_SEPARATOR, true);
 define('BASE_PATH', __DIR__ . DS, TRUE);
 
 require BASE_PATH . 'vendor/autoload.php';
-require BASE_PATH . 'models/TODOList.php';
+require BASE_PATH . 'models/Items.php';
 
 $app = System\App::instance();
 $app->request = System\Request::instance();
@@ -24,8 +24,8 @@ $route->get('/', function() {
  * TODO List
  */
 $route->get('/api/v1/todolist', function() {
-    $todolist = new TODOList();
-    $data = $todolist->get_all();
+    $items = new Items();
+    $data = $items->get_all();
     if (empty($data)) {
         echo json_encode(['status' => 'Error', 'message' => 'No result']);
     } else {
@@ -36,8 +36,8 @@ $route->get('/api/v1/todolist', function() {
  * Show Item
  */
 $route->get('/api/v1/todolist/?', function($id) {
-    $todolist = new TODOList();
-    $data = $todolist->get_row($id);
+    $items = new Items();
+    $data = $items->get_row($id);
     if (empty($data)) {
         echo json_encode(['status' => 'Error', 'message' => 'No result']);
     } else {
@@ -49,11 +49,11 @@ $route->get('/api/v1/todolist/?', function($id) {
  */
 $route->post('/api/v1/todolist', function() {
     $input = app('request')->body;
-    $todolist = new TODOList();
+    $items = new Items();
     if (empty($input['item'])) {
         echo json_encode(['status' => 'Error', 'message' => 'Item is required']);
     } else {
-        $new_item_id = $todolist->insert(['item' => $input['item']]);
+        $new_item_id = $items->insert(['item' => $input['item']]);
         if ($new_item_id) {
             echo json_encode(['status' => 'Success', 'data' => ['id' => $new_item_id]]);
         } else {
@@ -66,11 +66,11 @@ $route->post('/api/v1/todolist', function() {
  */
 $route->patch('/api/v1/todolist/?', function($id) {
     $input = app('request')->query;
-    $todolist = new TODOList();
+    $items = new Items();
     if (empty($input['item'])) {
         echo json_encode(['status' => 'Error', 'message' => 'Item is required']);
     } else {
-        $result = $todolist->update($id, ['item' => $input['item']]);
+        $result = $items->update($id, ['item' => $input['item']]);
         if ($result) {
             echo json_encode(['status' => 'Success']);
         } else {
@@ -82,8 +82,8 @@ $route->patch('/api/v1/todolist/?', function($id) {
  * Delete Item
  */
 $route->delete('/api/v1/todolist/?', function($id) {
-    $todolist = new TODOList();
-    $result = $todolist->delete($id);
+    $items = new Items();
+    $result = $items->delete($id);
     if ($result) {
         echo json_encode(['status' => 'Success']);
     } else {
@@ -95,9 +95,9 @@ $route->delete('/api/v1/todolist/?', function($id) {
  */
 $route->post('/api/v1/todolist/?/done', function($id) {
     $input = app('request')->body;
-    $todolist = new TODOList();
-    $done = !empty($input['done']) ? true : false;
-    $result = $todolist->update($id, ['done' => $done]);
+    $items = new Items();
+    $done = !empty($input['done']) && $input['done'] == 'yes' ? true : false;
+    $result = $items->update($id, ['done' => $done]);
     if ($result) {
         echo json_encode(['status' => 'Success']);
     } else {

@@ -4,9 +4,9 @@
  */
 require_once (dirname(__FILE__) . "/library/Model.php");
 
-class TODOList extends Model {
+class Items extends Model {
 
     function __construct() {
-        parent::__construct('todolist', 'id');
+        parent::__construct('items', 'id');
     }
 }
